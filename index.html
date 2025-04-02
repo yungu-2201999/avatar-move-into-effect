@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>avatar-move-into-effect
+  </title>
+  <style>
+    .box {
+      background: url(./img.jpg) center /cover;
+      width: 200px;
+      height: 200px;
+      position: relative;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 5px solid #000;
+    }
+
+    .box::after, .box::before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: 0;
+    }
+
+    .box::before {
+      background-color: #000000a5;
+    }
+
+    .box::after {
+      background: inherit;
+      clip-path: circle(0% at 50% 50%);
+      transition: clip-path 0.3s ease-in-out;
+    }
+    .box:hover::after {
+      clip-path: circle(50% at 50% 50%);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>
